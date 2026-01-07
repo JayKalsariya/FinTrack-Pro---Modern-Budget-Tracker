@@ -1,0 +1,7 @@
+{
+  "name": "FinTrack Pro - Modern Budget Tracker",
+  "description": "A feature-rich, mobile-first personal finance tracker with real-time charts, budget limits, and dark mode support.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
