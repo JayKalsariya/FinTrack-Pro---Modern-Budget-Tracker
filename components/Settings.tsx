@@ -7,7 +7,7 @@ import {
   Moon, Sun, Download, 
   ChevronRight, Bell, 
   Trash2, Search, Globe, X, LogOut,
-  User as UserIcon, Check
+  User as UserIcon, Check, Sparkles
 } from 'lucide-react';
 
 interface SettingsProps {
@@ -16,6 +16,7 @@ interface SettingsProps {
   transactions: Transaction[];
   onUpdate: (settings: UserSettings) => void;
   onUpdateName: (name: string) => void;
+  onLoadDemoData?: () => void;
   onReset: () => void;
   onExport: () => void;
   onLogout: () => void;
@@ -27,6 +28,7 @@ export const Settings: React.FC<SettingsProps> = ({
   transactions, 
   onUpdate, 
   onUpdateName,
+  onLoadDemoData,
   onReset, 
   onExport, 
   onLogout 
@@ -105,6 +107,17 @@ export const Settings: React.FC<SettingsProps> = ({
             )}
           </div>
         </Card>
+
+        {/* Screenshot Helper Section */}
+        {onLoadDemoData && (
+          <button 
+            onClick={onLoadDemoData}
+            className="w-full flex items-center justify-center gap-2 p-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-2xl border border-blue-100 dark:border-blue-800/50 text-xs font-bold transition-all active:scale-95"
+          >
+            <Sparkles className="w-4 h-4" />
+            Prep Demo Data for Screenshots
+          </button>
+        )}
 
         <h3 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] px-1 pt-2">Global Preferences</h3>
         
@@ -213,10 +226,6 @@ export const Settings: React.FC<SettingsProps> = ({
             <ChevronRight className="w-4 h-4 text-gray-300 dark:text-gray-600" />
           </button>
         </Card>
-
-        <div className="text-center pt-10">
-          <p className="text-[10px] font-black text-gray-300 dark:text-gray-700 uppercase tracking-[0.3em]">FinTrack Pro v1.4.0 • Secured Local Vault</p>
-        </div>
       </div>
 
       {/* Currency Selection Modal */}

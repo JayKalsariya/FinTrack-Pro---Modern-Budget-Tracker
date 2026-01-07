@@ -77,6 +77,27 @@ const App: React.FC = () => {
     StorageService.updateActiveData(user, { name: updatedName });
   };
 
+  // UI Tweak: Function to populate demo data for clean screenshots
+  const handleLoadDemoData = () => {
+    if (!user) return;
+    const demoTransactions: Transaction[] = [
+      { id: '1', type: 'income', amount: 85000, category: 'Salary', date: new Date().toISOString().split('T')[0], note: 'Monthly Salary' },
+      { id: '2', type: 'expense', amount: 12500, category: 'Rent', date: new Date().toISOString().split('T')[0], note: 'Apartment Rent' },
+      { id: '3', type: 'expense', amount: 4500, category: 'Food', date: new Date().toISOString().split('T')[0], note: 'Grocery Shopping' },
+      { id: '4', type: 'expense', amount: 1200, category: 'Transport', date: new Date().toISOString().split('T')[0], note: 'Fuel' },
+      { id: '5', type: 'expense', amount: 3500, category: 'Shopping', date: new Date().toISOString().split('T')[0], note: 'New Shoes' },
+      { id: '6', type: 'expense', amount: 850, category: 'Utilities', date: new Date().toISOString().split('T')[0], note: 'Electricity Bill' },
+    ];
+    setTransactions(demoTransactions);
+    setProfile(prev => prev ? { ...prev, name: 'John Doe' } : null);
+    StorageService.updateActiveData(user, { 
+      transactions: demoTransactions, 
+      name: 'John Doe',
+      settings: { ...settings!, budgetLimit: 25000 }
+    });
+    setSettings(prev => prev ? { ...prev, budgetLimit: 25000 } : null);
+  };
+
   if (!user || !settings) {
     return <Login onLogin={handleLogin} />;
   }
@@ -95,6 +116,7 @@ const App: React.FC = () => {
             transactions={transactions} 
             onUpdate={handleUpdateSettings} 
             onUpdateName={handleUpdateName}
+            onLoadDemoData={handleLoadDemoData}
             onReset={() => {
               const resetSettings = { ...settings, budgetLimit: 50000 };
               setTransactions([]);
