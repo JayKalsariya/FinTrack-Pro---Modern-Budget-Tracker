@@ -5,35 +5,17 @@ FinTrack Pro is a mobile-first, high-performance budget tracking application des
 
 ---
 
-## 📱 App Screenshots
-
 ### 🔐 Authentication Flow
 Experience a secure, frictionless onboarding process.
-| Login Screen | OTP Verification |
-| :---: | :---: |
-| ![Login](screenshots/login.png) | ![OTP](screenshots/otp_verify.png) |
-| *Phone Auth* | *Security First* |
 
 ### 🏠 Financial Dashboard
 Everything you need to know about your money in one glance.
-| Main Dashboard | Add Expense | Add Income |
-| :---: | :---: | :---: |
-| ![Dashboard](screenshots/dashboard.png) | ![Expense](screenshots/add_expense.png) | ![Income](screenshots/add_income.png) |
-| *Balance & Recent Activity* | *Swift Category Entry* | *Revenue Tracking* |
 
 ### 📊 Analytics & Reporting
 Deep dive into your spending habits with intuitive visualizations.
-| Monthly Growth | Category Breakdown | History List |
-| :---: | :---: | :---: |
-| ![Growth](screenshots/reports_growth.png) | ![Category](screenshots/reports_categories.png) | ![History](screenshots/history.png) |
-| *Bar Chart Trends* | *Pie Chart Distribution* | *Audit Log* |
 
 ### ⚙️ Settings & Customization
 Tailor the app to your global needs.
-| App Settings | Currency Selector | Dark Mode |
-| :---: | :---: | :---: |
-| ![Settings](screenshots/settings.png) | ![Currency](screenshots/currency_selector.png) | ![Dark Mode](screenshots/dark_mode.png) |
-| *Security & Profile* | *Global Market Support* | *Premium Night View* |
 
 ---
 
@@ -72,8 +54,3 @@ Tailor the app to your global needs.
 ## 🛡️ Privacy & Security Note
 
 FinTrack Pro implements **Client-Side Data Isolation**. Unlike traditional apps that store all user data in a single global database, FinTrack Pro creates a "Vault" identified by the user's phone number. No financial data ever leaves your local storage unless you explicitly use the "Export CSV" feature.
-
----
-
-Developed with ❤️ by **[Your Name/Agency]**
-*Empowering your financial future.*
